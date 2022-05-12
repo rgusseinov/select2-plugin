@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"4GyDO":[function(require,module,exports) {
+})({"7fmqN":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -526,8 +526,107 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"8lqZg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _select2Sass = require("./sass/select2.sass");
+var _select2 = require("./select2");
+var _select2Default = parcelHelpers.interopDefault(_select2);
+const select2 = new _select2Default.default("#select", {
+    placeholder: "Please select city name",
+    data: [
+        {
+            id: 1,
+            value: "Almaty"
+        },
+        {
+            id: 2,
+            value: "Astana"
+        },
+        {
+            id: 3,
+            value: "Atyrau"
+        },
+        {
+            id: 4,
+            value: "Kazaganda"
+        },
+        {
+            id: 5,
+            value: "Shymkent"
+        }, 
+    ]
+});
 
-},{"./sass/select2.sass":"kvs8F"}],"kvs8F":[function() {},{}]},["4GyDO","8lqZg"], "8lqZg", "parcelRequirea2c1")
+},{"./sass/select2.sass":"kvs8F","./select2":"6S5qz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kvs8F":[function() {},{}],"6S5qz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+const getTemplate = ({ data , placeholder  })=>{
+    const placeholderText = placeholder.length ? placeholder : "Please select option";
+    const selectItems = data.map((item)=>`<li class="select__item">${item.value}</li>`
+    ).join("");
+    return `
+		<div class="select">		
+			<div class="select__input">
+				<span>${placeholderText}</span>
+				<i class="fa fa-chevron-down"></i>
+			</div>
+			
+			<div class="select__dropdown">
+				<input type="text" class="select__search">
+				<ul class="select__list">
+					${selectItems}
+				</ul>
+			</div>
+	</div>`;
+};
+class Select2 {
+    constructor(selector, options){
+        this.$el = document.querySelector(selector);
+        this.options = options;
+        this.render();
+        this.setup();
+    }
+    render() {
+        this.$el.innerHTML = getTemplate(this.options);
+    }
+    setup() {
+        this.$el.addEventListener("click", this.clickHandler.bind(this));
+    }
+    clickHandler(e) {
+        if (e.target.classList.contains("select__input")) this.$el.classList.toggle("open");
+    }
+}
+exports.default = Select2;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}]},["7fmqN","8lqZg"], "8lqZg", "parcelRequirea2c1")
 
 //# sourceMappingURL=index.975ef6c8.js.map

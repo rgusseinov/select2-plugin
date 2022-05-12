@@ -28,21 +28,25 @@
 }
 
 .select__dropdown {
-  max-height: 200px;
   border-radius: 5px;
   display: none;
-  position: absolute;
   top: 46px;
   left: 0;
   right: 0;
-  overflow-y: auto;
   box-shadow: 2px 3px 5px #0000004d;
 }
 
+.select__search {
+  width: 98%;
+  padding: 10px 0;
+}
+
 .select__list {
+  max-height: 200px;
   margin: 0;
   padding: 0;
   list-style: none;
+  overflow-y: auto;
 }
 
 .select__item {

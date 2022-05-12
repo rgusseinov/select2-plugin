@@ -5,15 +5,13 @@
 
 .wrap
 	width: 500px
-	
+
 .select
 	width: 100%
 	position: relative
 	&.open
 		.select__dropdown
 			display: block
-		.select__input
-
 	&__input
 		border-radius: 5px
 		border: 1px solid #ccc
@@ -25,15 +23,17 @@
 
 	&__dropdown
 		display: none
-		position: absolute
 		border-radius: 5px
 		top: 46px
 		left: 0
 		right: 0
+		box-shadow: 2px 3px 5px rgba(0, 0, 0, .3)
+	&__search
+		padding: 10px 0
+		width: 98%
+	&__list
 		max-height: 200px
 		overflow-y: auto
-		box-shadow: 2px 3px 5px rgba(0, 0, 0, .3)
-	&__list
 		margin: 0
 		padding: 0
 		list-style: none
