@@ -1,15 +1,48 @@
+.app
+	padding-top: 5rem
+	display: flex
+	justify-content: center
+
+.wrap
+	width: 500px
+	
 .select
-	margin: 40px auto 0 auto
-	width: 280px
-	.header
+	width: 100%
+	position: relative
+	&.open
+		.select__dropdown
+			display: block
+		.select__input
+
+	&__input
+		border-radius: 5px
+		border: 1px solid #ccc
+		height: 46px
 		display: flex
 		justify-content: space-between
-		border-radius: 3px
-		background-color: #e7e7e7
-		padding: 10px
-		font-size: 18px
-	&__items
-		list-style-type: none
-		li
-			font-size:18px
-			padding: 5px
+		align-items: center
+		padding: 0 1rem
+
+	&__dropdown
+		display: none
+		position: absolute
+		border-radius: 5px
+		top: 46px
+		left: 0
+		right: 0
+		max-height: 200px
+		overflow-y: auto
+		box-shadow: 2px 3px 5px rgba(0, 0, 0, .3)
+	&__list
+		margin: 0
+		padding: 0
+		list-style: none
+
+	&__item
+		padding: 1rem
+		border-bottom: 1px solid #ccc
+
+		&:hover
+			background-color: #eee
+			cursor: pointer
+			transition: .15s background-color easy-in

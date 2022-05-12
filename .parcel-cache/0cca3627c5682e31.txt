@@ -14,7 +14,7 @@
 56C:\select2-plugin\node_modules\css-select\lib\index.d.ts132967278537364690 0
 80C:\select2-plugin\node_modules\htmlnano\lib\modules\minifyConditionalComments.js132967278542487398 0
 54C:\select2-plugin\node_modules\whatwg-url\lib\infra.js132967278551840252 0
-22C:\select2-plugin\dist132967296918683144 1
+22C:\select2-plugin\dist132968313583384675 1
 65C:\select2-plugin\node_modules\@parcel\packager-js\lib\helpers.js132967278519258739 0
 62C:\select2-plugin\node_modules\@parcel\workers\src\cpuCount.js132967278531932631 0
 44C:\select2-plugin\node_modules\nan\README.md132967278548384869 0
@@ -22,7 +22,7 @@
 45C:\select2-plugin\node_modules\domelementtype132967278538752906 1
 59C:\select2-plugin\node_modules\@parcel\events\src\errors.js132967278516786968 0
 43C:\select2-plugin\node_modules\svgo\LICENSE132967278550232031 0
-39C:\select2-plugin\src\sass\select2.sass132967295573815432 0
+39C:\select2-plugin\src\sass\select2.sass132968313582561045 0
 50C:\select2-plugin\node_modules\type-fest\readme.md132967278551417278 0
 79C:\select2-plugin\node_modules\caniuse-lite\data\features\html-media-capture.js132967278534699806 0
 92C:\select2-plugin\node_modules\@parcel\package-manager\test\fixtures\packages\peers\index.js132967278519149758 0
@@ -59,7 +59,7 @@
 58C:\select2-plugin\node_modules\type-fest\source\merge.d.ts132967278551488232 0
 62C:\select2-plugin\node_modules\caniuse-lite\data\regions\AM.js132967278535824728 0
 51C:\select2-plugin\node_modules\json5\lib\index.d.ts132967278545050997 0
-32C:\select2-plugin\src\index.html132967296920432091 0
+32C:\select2-plugin\src\index.html132968313062299651 0
 56C:\select2-plugin\node_modules\sass\types\value\map.d.ts132967278549855868 0
 58C:\select2-plugin\node_modules\dom-serializer\lib\index.js132967278538602486 0
 30C:\select2-plugin\src\index.js132967278552240031 0
@@ -264,7 +264,7 @@
 88C:\select2-plugin\node_modules\dom-serializer\node_modules\entities\lib\maps\decode.json132967278538669490 0
 71C:\select2-plugin\node_modules\utility-types\dist\aliases-and-guards.js132967278551640886 0
 118C:\select2-plugin\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\side-effects-false-glob\a\index.js132967278518197729 0
-44C:\select2-plugin\dist\index.975ef6c8.js.map132967295102124697 0
+44C:\select2-plugin\dist\index.975ef6c8.js.map132968311039916504 0
 54C:\select2-plugin\node_modules\parent-module\readme.md132967278548979917 0
 37C:\select2-plugin\node_modules\dotenv132967278539003525 1
 83C:\select2-plugin\node_modules\@swc\helpers\lib\_object_without_properties_loose.js132967278532336560 0
@@ -2530,7 +2530,7 @@
 52C:\select2-plugin\node_modules\cosmiconfig\README.md132967278537126828 0
 55C:\select2-plugin\node_modules\csso\lib\clean\Atrule.js132967278538308206 0
 59C:\select2-plugin\node_modules\csso\lib\restructure\prepare132967278538475088 1
-40C:\select2-plugin\dist\index.975ef6c8.js132967295102104738 0
+40C:\select2-plugin\dist\index.975ef6c8.js132968311039906775 0
 66C:\select2-plugin\node_modules\caniuse-lite\data\features\http3.js132967278534719559 0
 87C:\select2-plugin\node_modules\csso\lib\restructure\prepare\createDeclarationIndexer.js132967278538465339 0
 72C:\select2-plugin\node_modules\@parcel\transformer-posthtml\package.json132967278530544116 0
@@ -4318,8 +4318,8 @@
 42C:\select2-plugin\node_modules\.bin\terser132967278513173177 0
 46C:\select2-plugin\node_modules\.bin\terser.cmd132967278513182923 0
 44C:\select2-plugin\dist\index.579125c3.js.map132967278513012154 0
-41C:\select2-plugin\dist\index.92e644d8.css132967295574680731 0
-45C:\select2-plugin\dist\index.92e644d8.css.map132967295574680731 0
+41C:\select2-plugin\dist\index.92e644d8.css132968313583344636 0
+45C:\select2-plugin\dist\index.92e644d8.css.map132968313583344636 0
 45C:\select2-plugin\dist\index.dcc9ba11.css.map132967278513042075 0
-33C:\select2-plugin\dist\index.html132967296918643509 0
+33C:\select2-plugin\dist\index.html132968313063080831 0
 42C:\select2-plugin\dist\select2.59712999.js132967278513071997 0
