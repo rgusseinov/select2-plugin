@@ -11,3 +11,5 @@ const select2 = new Select2("#select", {
     { id: 5, value: "Shymkent" },
   ],
 });
+
+window.s = select2;

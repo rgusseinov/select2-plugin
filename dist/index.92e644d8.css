@@ -54,6 +54,10 @@
   padding: 1rem;
 }
 
+.select__item.selected {
+  background-color: #e6e6e6;
+}
+
 .select__item:hover {
   cursor: pointer;
   transition: .15s background-color easy-in;

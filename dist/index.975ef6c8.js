@@ -555,19 +555,20 @@ const select2 = new _select2Default.default("#select", {
         }, 
     ]
 });
+window.s = select2;
 
 },{"./sass/select2.sass":"kvs8F","./select2":"6S5qz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kvs8F":[function() {},{}],"6S5qz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const getTemplate = ({ data , placeholder  })=>{
-    const placeholderText = placeholder.length ? placeholder : "Please select option";
-    const selectItems = data.map((item)=>`<li class="select__item">${item.value}</li>`
+const getTemplate = (data, placeholder)=>{
+    const placeholderText = placeholder ?? "Please select option";
+    const selectItems = data.map((item)=>`<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`
     ).join("");
     return `
 		<div class="select">		
-			<div class="select__input">
-				<span>${placeholderText}</span>
-				<i class="fa fa-chevron-down"></i>
+			<div class="select__input" data-type="input">
+				<span data-type="value">${placeholderText}</span>
+				<i class="fa fa-chevron-up" data-type="arrow"></i>
 			</div>
 			
 			<div class="select__dropdown">
@@ -582,17 +583,54 @@ class Select2 {
     constructor(selector, options){
         this.$el = document.querySelector(selector);
         this.options = options;
+        this.selectedId = null;
         this.render();
         this.setup();
     }
     render() {
-        this.$el.innerHTML = getTemplate(this.options);
+        const { placeholder , data  } = this.options;
+        this.$el.innerHTML = getTemplate(data, placeholder);
     }
     setup() {
         this.$el.addEventListener("click", this.clickHandler.bind(this));
+        this.$arrow = this.$el.querySelector('[data-type="arrow"]');
+        this.$value = this.$el.querySelector('[data-type="value"]');
     }
     clickHandler(e) {
-        if (e.target.classList.contains("select__input")) this.$el.classList.toggle("open");
+        const { type  } = e.target.dataset;
+        if (type === "input") this.toggle();
+        else if (type === "item") {
+            const id = e.target.dataset.id;
+            this.select(id);
+        }
+    }
+    select(id) {
+        this.selectedId = id;
+        this.$value.textContent = this.current.value;
+        this.$el.querySelectorAll('[data-type="item"]').forEach((item)=>item.classList.remove("selected")
+        );
+        this.$el.querySelector(`[data-id="${id}"]`).classList.add("selected");
+        this.close();
+    }
+    get current() {
+        return this.options.data.find((item)=>item.id === Number(this.selectedId)
+        );
+    }
+    isOpen() {
+        return this.$el.classList.contains("open");
+    }
+    open() {
+        this.$el.classList.add("open");
+        this.$arrow.classList.add("fa-chevron-down");
+        this.$arrow.classList.remove("fa-chevron-up");
+    }
+    close() {
+        this.$el.classList.remove("open");
+        this.$arrow.classList.add("fa-chevron-up");
+        this.$arrow.classList.remove("fa-chevron-down");
+    }
+    toggle() {
+        this.isOpen() ? this.close() : this.open();
     }
 }
 exports.default = Select2;
