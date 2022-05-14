@@ -40,17 +40,17 @@ class Select2 {
 
   setup() {
     this.$el.addEventListener("click", this.clickHandler.bind(this));
+    this.$el.classList.add("select");
     this.$arrow = this.$el.querySelector('[data-type="arrow"]');
     this.$value = this.$el.querySelector('[data-type="value"]');
   }
 
   clickHandler(e) {
-    const { type } = e.target.dataset;
+    const { type, id } = e.target.dataset;
 
     if (type === "input") {
       this.toggle();
     } else if (type === "item") {
-      const id = e.target.dataset.id;
       this.select(id);
     }
   }
@@ -67,9 +67,7 @@ class Select2 {
   }
 
   get current() {
-    return this.options.data.find(
-      (item) => item.id === Number(this.selectedId)
-    );
+    return this.options.data.find((item) => item.id == this.selectedId);
   }
 
   isOpen() {
