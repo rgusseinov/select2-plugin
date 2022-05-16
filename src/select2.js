@@ -1,6 +1,5 @@
 const getTemplate = (data, placeholder) => {
   const text = placeholder ?? "Please select option";
-
   const selectItems = data
     .map(
       (item) =>
@@ -22,6 +21,14 @@ const getTemplate = (data, placeholder) => {
 			</div>
 
 	</div>`;
+};
+
+const getFilteredItems = (data, value) => {
+  return data.filter((item) => {
+    if (item.value.toLowerCase().includes(value)) {
+      return item;
+    }
+  });
 };
 
 class Select2 {
@@ -66,24 +73,25 @@ class Select2 {
   keyupHandler(e) {
     const value = e.target.value.toLowerCase();
     const { data } = this.options;
+    const filteredItems = getFilteredItems(data, value);
 
-    let filteredItems = data.filter((item) => {
-      if (item.value.toLowerCase().includes(value)) {
-        return item;
-      }
-    });
-
-    if (filteredItems.length) {
-      filteredItems = filteredItems
-        .map((item) => {
-          return `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`;
-        })
-        .join("");
-    } else {
-      filteredItems = `<li class="select__item">No items found</li>`;
+    if (!filteredItems.length) {
+      this.$listItems.innerHTML = `<li class="select__item">No items found</li>`;
+      return;
     }
 
-    this.$listItems.innerHTML = filteredItems;
+    this._renderItems(filteredItems);
+  }
+
+  _renderItems(data) {
+    const listItemMarkup = data
+      .map((item) => {
+        return `<li class="select__item ${
+          item.id == this.selectedId ? "selected" : ""
+        }" data-type="item" data-id=${item.id}>${item.value}</li>`;
+      })
+      .join("");
+    this.$listItems.innerHTML = listItemMarkup;
   }
 
   select(id) {
@@ -114,14 +122,7 @@ class Select2 {
     this.$arrow.classList.add("fa-chevron-down");
     this.$arrow.classList.remove("fa-chevron-up");
 
-    const listItemMarkup = data
-      .map((item) => {
-        return `<li class="select__item ${
-          item.id == this.selectedId ? "selected" : ""
-        }" data-type="item" data-id=${item.id}>${item.value}</li>`;
-      })
-      .join("");
-    this.$listItems.innerHTML = listItemMarkup;
+    this._renderItems(data);
   }
 
   close() {
@@ -132,13 +133,8 @@ class Select2 {
     this.$arrow.classList.remove("fa-chevron-down");
 
     if (this.$input.value) {
-      const listItemMarkup = data
-        .map((item) => {
-          return `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`;
-        })
-        .join("");
+      this._renderItems(data);
       this.$input.value = "";
-      this.$listItems.innerHTML = listItemMarkup;
     }
   }
 

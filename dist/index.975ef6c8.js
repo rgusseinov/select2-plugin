@@ -531,39 +531,39 @@ var _select2Sass = require("./sass/select2.sass");
 var _select2 = require("./select2");
 var _select2Default = parcelHelpers.interopDefault(_select2);
 const select2 = new _select2Default.default("#select", {
-    placeholder: "Please select city name",
+    placeholder: "Please select item",
     data: [
         {
             id: 1,
-            value: "Almaty"
+            value: "Milk"
         },
         {
             id: 2,
-            value: "Astana"
+            value: "Water"
         },
         {
             id: 3,
-            value: "Atyrau"
+            value: "Bread"
         },
         {
             id: 4,
-            value: "Kazaganda"
+            value: "Orange"
         },
         {
             id: 5,
-            value: "Shymkent"
+            value: "Cucumber"
         },
         {
             id: 6,
-            value: "Akmola"
+            value: "Pumpkins"
         },
         {
             id: 7,
-            value: "Zharkent"
+            value: "Onion"
         },
         {
             id: 8,
-            value: "Slavyanka"
+            value: "Meat"
         }, 
     ]
 });
@@ -591,6 +591,11 @@ const getTemplate = (data, placeholder)=>{
 			</div>
 
 	</div>`;
+};
+const getFilteredItems = (data, value)=>{
+    return data.filter((item)=>{
+        if (item.value.toLowerCase().includes(value)) return item;
+    });
 };
 class Select2 {
     constructor(selector, options){
@@ -626,14 +631,18 @@ class Select2 {
     keyupHandler(e) {
         const value = e.target.value.toLowerCase();
         const { data  } = this.options;
-        let filteredItems = data.filter((item)=>{
-            if (item.value.toLowerCase().includes(value)) return item;
-        });
-        if (filteredItems.length) filteredItems = filteredItems.map((item)=>{
-            return `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`;
+        const filteredItems = getFilteredItems(data, value);
+        if (!filteredItems.length) {
+            this.$listItems.innerHTML = `<li class="select__item">No items found</li>`;
+            return;
+        }
+        this._renderItems(filteredItems);
+    }
+    _renderItems(data) {
+        const listItemMarkup = data.map((item)=>{
+            return `<li class="select__item ${item.id == this.selectedId ? "selected" : ""}" data-type="item" data-id=${item.id}>${item.value}</li>`;
         }).join("");
-        else filteredItems = `<li class="select__item">No items found</li>`;
-        this.$listItems.innerHTML = filteredItems;
+        this.$listItems.innerHTML = listItemMarkup;
     }
     select(id) {
         this.selectedId = id;
@@ -656,10 +665,7 @@ class Select2 {
         this.$el.classList.add("open");
         this.$arrow.classList.add("fa-chevron-down");
         this.$arrow.classList.remove("fa-chevron-up");
-        const listItemMarkup = data.map((item)=>{
-            return `<li class="select__item ${item.id == this.selectedId ? "selected" : ""}" data-type="item" data-id=${item.id}>${item.value}</li>`;
-        }).join("");
-        this.$listItems.innerHTML = listItemMarkup;
+        this._renderItems(data);
     }
     close() {
         const { data  } = this.options;
@@ -667,11 +673,8 @@ class Select2 {
         this.$arrow.classList.add("fa-chevron-up");
         this.$arrow.classList.remove("fa-chevron-down");
         if (this.$input.value) {
-            const listItemMarkup = data.map((item)=>{
-                return `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`;
-            }).join("");
+            this._renderItems(data);
             this.$input.value = "";
-            this.$listItems.innerHTML = listItemMarkup;
         }
     }
     toggle() {
