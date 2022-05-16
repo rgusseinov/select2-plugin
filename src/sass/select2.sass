@@ -23,14 +23,18 @@
 
 	&__dropdown
 		display: none
-		border-radius: 5px
+		border-bottom-left-radius: 5px
+		border-bottom-right-radius: 5px
 		top: 46px
 		left: 0
 		right: 0
 		box-shadow: 2px 3px 5px rgba(0, 0, 0, .3)
 	&__search
-		padding: 10px 0
-		width: 98%
+		margin: 10px 10px
+		padding: 10px 10px
+		width: 455px
+		&:focus
+			outline: none
 	&__list
 		max-height: 200px
 		overflow-y: auto

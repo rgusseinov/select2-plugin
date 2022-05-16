@@ -9,6 +9,9 @@ const select2 = new Select2("#select", {
     { id: 3, value: "Atyrau" },
     { id: 4, value: "Kazaganda" },
     { id: 5, value: "Shymkent" },
+    { id: 6, value: "Akmola" },
+    { id: 7, value: "Zharkent" },
+    { id: 8, value: "Slavyanka" },
   ],
 });
 

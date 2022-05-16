@@ -28,7 +28,8 @@
 }
 
 .select__dropdown {
-  border-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   display: none;
   top: 46px;
   left: 0;
@@ -37,8 +38,13 @@
 }
 
 .select__search {
-  width: 98%;
-  padding: 10px 0;
+  width: 455px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.select__search:focus {
+  outline: none;
 }
 
 .select__list {

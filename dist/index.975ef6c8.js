@@ -552,6 +552,18 @@ const select2 = new _select2Default.default("#select", {
         {
             id: 5,
             value: "Shymkent"
+        },
+        {
+            id: 6,
+            value: "Akmola"
+        },
+        {
+            id: 7,
+            value: "Zharkent"
+        },
+        {
+            id: 8,
+            value: "Slavyanka"
         }, 
     ]
 });
@@ -561,22 +573,23 @@ window.s = select2;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 const getTemplate = (data, placeholder)=>{
-    const placeholderText = placeholder ?? "Please select option";
+    const text = placeholder ?? "Please select option";
     const selectItems = data.map((item)=>`<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`
     ).join("");
     return `
-		<div class="select">		
+		<div class="select">
 			<div class="select__input" data-type="input">
-				<span data-type="value">${placeholderText}</span>
+				<span data-type="value">${text}</span>
 				<i class="fa fa-chevron-up" data-type="arrow"></i>
 			</div>
 			
 			<div class="select__dropdown">
-				<input type="text" class="select__search">
-				<ul class="select__list">
+				<input type="text" class="select__search" data-type="search">
+				<ul class="select__list" data-type="list-item">
 					${selectItems}
 				</ul>
 			</div>
+
 	</div>`;
 };
 class Select2 {
@@ -592,19 +605,40 @@ class Select2 {
         this.$el.innerHTML = getTemplate(data, placeholder);
     }
     setup() {
-        this.$el.addEventListener("click", this.clickHandler.bind(this));
         this.$el.classList.add("select");
+        document.addEventListener("click", this.documentClickHandler.bind(this));
+        this.$el.addEventListener("keyup", this.keyupHandler.bind(this));
         this.$arrow = this.$el.querySelector('[data-type="arrow"]');
         this.$value = this.$el.querySelector('[data-type="value"]');
+        this.$listItems = this.$el.querySelector('[data-type="list-item"]');
+        this.$input = this.$el.querySelector('[data-type="search"]');
     }
-    clickHandler(e) {
+    documentClickHandler(e) {
         const { type , id  } = e.target.dataset;
-        if (type === "input") this.toggle();
+        if ([
+            "input",
+            "value",
+            "arrow"
+        ].includes(type)) this.toggle();
         else if (type === "item") this.select(id);
+        else if (type !== "search") this.close();
+    }
+    keyupHandler(e) {
+        const value = e.target.value.toLowerCase();
+        const { data  } = this.options;
+        let filteredItems = data.filter((item)=>{
+            if (item.value.toLowerCase().includes(value)) return item;
+        });
+        if (filteredItems.length) filteredItems = filteredItems.map((item)=>{
+            return `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`;
+        }).join("");
+        else filteredItems = `<li class="select__item">No items found</li>`;
+        this.$listItems.innerHTML = filteredItems;
     }
     select(id) {
         this.selectedId = id;
         this.$value.textContent = this.current.value;
+        this.$input.value = "";
         this.$el.querySelectorAll('[data-type="item"]').forEach((item)=>item.classList.remove("selected")
         );
         this.$el.querySelector(`[data-id="${id}"]`).classList.add("selected");
@@ -618,14 +652,27 @@ class Select2 {
         return this.$el.classList.contains("open");
     }
     open() {
+        const { data  } = this.options;
         this.$el.classList.add("open");
         this.$arrow.classList.add("fa-chevron-down");
         this.$arrow.classList.remove("fa-chevron-up");
+        const listItemMarkup = data.map((item)=>{
+            return `<li class="select__item ${item.id == this.selectedId ? "selected" : ""}" data-type="item" data-id=${item.id}>${item.value}</li>`;
+        }).join("");
+        this.$listItems.innerHTML = listItemMarkup;
     }
     close() {
+        const { data  } = this.options;
         this.$el.classList.remove("open");
         this.$arrow.classList.add("fa-chevron-up");
         this.$arrow.classList.remove("fa-chevron-down");
+        if (this.$input.value) {
+            const listItemMarkup = data.map((item)=>{
+                return `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`;
+            }).join("");
+            this.$input.value = "";
+            this.$listItems.innerHTML = listItemMarkup;
+        }
     }
     toggle() {
         this.isOpen() ? this.close() : this.open();
