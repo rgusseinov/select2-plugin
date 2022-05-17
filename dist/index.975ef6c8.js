@@ -532,6 +532,7 @@ var _select2 = require("./select2");
 var _select2Default = parcelHelpers.interopDefault(_select2);
 const select2 = new _select2Default.default("#select", {
     placeholder: "Please select item",
+    allowSearch: true,
     data: [
         {
             id: 1,
@@ -572,10 +573,11 @@ window.s = select2;
 },{"./sass/select2.sass":"kvs8F","./select2":"6S5qz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kvs8F":[function() {},{}],"6S5qz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-const getTemplate = (data, placeholder)=>{
+const getTemplate = (data, allowSearch, placeholder)=>{
     const text = placeholder ?? "Please select option";
     const selectItems = data.map((item)=>`<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`
     ).join("");
+    const inputSearchMarkup = allowSearch ? `<input type="text" class="select__search" data-type="search" />` : ``;
     return `
 		<div class="select">
 			<div class="select__input" data-type="input">
@@ -584,7 +586,7 @@ const getTemplate = (data, placeholder)=>{
 			</div>
 			
 			<div class="select__dropdown">
-				<input type="text" class="select__search" data-type="search">
+				${inputSearchMarkup}
 				<ul class="select__list" data-type="list-item">
 					${selectItems}
 				</ul>
@@ -606,17 +608,20 @@ class Select2 {
         this.setup();
     }
     render() {
-        const { placeholder , data  } = this.options;
-        this.$el.innerHTML = getTemplate(data, placeholder);
+        const { placeholder , allowSearch , data  } = this.options;
+        this.$el.innerHTML = getTemplate(data, allowSearch, placeholder);
     }
     setup() {
+        this.$input = "";
         this.$el.classList.add("select");
         document.addEventListener("click", this.documentClickHandler.bind(this));
-        this.$el.addEventListener("keyup", this.keyupHandler.bind(this));
         this.$arrow = this.$el.querySelector('[data-type="arrow"]');
         this.$value = this.$el.querySelector('[data-type="value"]');
         this.$listItems = this.$el.querySelector('[data-type="list-item"]');
-        this.$input = this.$el.querySelector('[data-type="search"]');
+        if (this.options.allowSearch) {
+            this.$el.addEventListener("keyup", this.keyupHandler.bind(this));
+            this.$input = this.$el.querySelector('[data-type="search"]');
+        }
     }
     documentClickHandler(e) {
         const { type , id  } = e.target.dataset;
@@ -647,7 +652,6 @@ class Select2 {
     select(id) {
         this.selectedId = id;
         this.$value.textContent = this.current.value;
-        this.$input.value = "";
         this.$el.querySelectorAll('[data-type="item"]').forEach((item)=>item.classList.remove("selected")
         );
         this.$el.querySelector(`[data-id="${id}"]`).classList.add("selected");

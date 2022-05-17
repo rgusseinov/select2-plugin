@@ -15,7 +15,7 @@
 58C:\select2\node_modules\@parcel\core\test\fixtures\plugins132966641870346372 1
 50C:\select2\node_modules\svgo\plugins\reusePaths.js121436361000000000 0
 41C:\select2\node_modules\nan\nan_private.h131637928500000000 0
-15C:\select2\dist132971994662001484 1
+15C:\select2\dist132972582258573450 1
 31C:\select2\node_modules\globals132966641796466291 1
 58C:\select2\node_modules\svgo\plugins\convertShapeToPath.js121436361000000000 0
 23C:\select2\node_modules132966646355985044 1
@@ -53,7 +53,7 @@
 79C:\select2\node_modules\react-refresh\cjs\react-refresh-babel.production.min.js121436361000000000 0
 80C:\select2\node_modules\@swc\helpers\src\_class_static_private_field_spec_set.js132902634970000000 0
 41C:\select2\node_modules\yaml\types\set.js121436361000000000 0
-25C:\select2\src\index.html132971995018887005 0
+25C:\select2\src\index.html132972580475586265 0
 69C:\select2\node_modules\@parcel\bundler-default\src\DefaultBundler.js121436361000000000 0
 53C:\select2\node_modules\type-fest\source\entries.d.ts121436361000000000 0
 73C:\select2\node_modules\caniuse-lite\data\features\css-text-align-last.js121436361000000000 0
@@ -68,7 +68,7 @@
 47C:\select2\node_modules\escalade\sync\index.mjs121436361000000000 0
 42C:\select2\node_modules\yaml\dist\types.js121436361000000000 0
 53C:\select2\node_modules\terser\node_modules\commander132966641793971018 1
-23C:\select2\src\index.js132971994681401633 0
+23C:\select2\src\index.js132972573358309996 0
 61C:\select2\node_modules\utility-types\dist\utility-types.d.ts121436361000000000 0
 40C:\select2\node_modules\@swc\helpers\lib132966641805131216 1
 53C:\select2\node_modules\nan\nan_typedarray_contents.h132319691640000000 0
@@ -87,7 +87,7 @@
 81C:\select2\node_modules\htmlnano\docs\versioned_docs\version-1.1.1\040-presets.md121436361000000000 0
 48C:\select2\node_modules\terser\dist\package.json121436361000000000 0
 57C:\select2\node_modules\source-map-js\lib\mapping-list.js121436361000000000 0
-25C:\select2\src\select2.js132971992893527974 0
+25C:\select2\src\select2.js132972582377682439 0
 58C:\select2\node_modules\caniuse-lite\data\features\woff.js121436361000000000 0
 54C:\select2\node_modules\lmdb\dependencies\lmdb-data-v1132966641807372669 1
 42C:\select2\node_modules\source-map-support132966641794300137 1
@@ -96,7 +96,7 @@
 55C:\select2\node_modules\caniuse-lite\data\regions\VG.js121436361000000000 0
 60C:\select2\node_modules\caniuse-lite\data\features\webnfc.js121436361000000000 0
 64C:\select2\node_modules\@parcel\events\test\ValueEmitter.test.js121436361000000000 0
-32C:\select2\src\sass\select2.sass132971869275716445 0
+32C:\select2\src\sass\select2.sass132972580784617716 0
 71C:\select2\node_modules\@parcel\optimizer-terser\lib\TerserOptimizer.js121436361000000000 0
 52C:\select2\node_modules\posthtml-render\changelog.md121436361000000000 0
 57C:\select2\node_modules\@swc\helpers\src\_to_primitive.js132902634970000000 0
@@ -338,7 +338,7 @@
 71C:\select2\node_modules\lmdb\prebuilds\linux-arm64\node.abi93.musl.node121436361000000000 0
 46C:\select2\node_modules\nth-check\lib\index.js121436361000000000 0
 55C:\select2\node_modules\svgo\lib\svgo\css-class-list.js121436361000000000 0
-34C:\select2\dist\index.92e644d8.css132971869276543779 0
+34C:\select2\dist\index.92e644d8.css132972580785665231 0
 50C:\select2\node_modules\yaml\browser\dist\types.js121436361000000000 0
 73C:\select2\node_modules\terser\node_modules\source-map\lib\source-node.js131832619030000000 0
 59C:\select2\node_modules\@parcel\transformer-postcss\LICENSE121436361000000000 0
@@ -4046,7 +4046,7 @@
 67C:\select2\node_modules\@parcel\markdown-ansi\test\markdown-ansi.js121436361000000000 0
 40C:\select2\node_modules\@parcel\core\src132966641880052089 1
 66C:\select2\node_modules\@parcel\markdown-ansi\lib\markdown-ansi.js121436361000000000 0
-26C:\select2\dist\index.html132971845366045464 0
+26C:\select2\dist\index.html132972580477049495 0
 51C:\select2\node_modules\@parcel\logger\package.json121436361000000000 0
 47C:\select2\node_modules\@parcel\hash\browser.js121436361000000000 0
 45C:\select2\node_modules\@parcel\hash\index.js121436361000000000 0
@@ -4318,9 +4318,9 @@
 39C:\select2\node_modules\.bin\terser.cmd132966642035701400 0
 39C:\select2\node_modules\.bin\terser.ps1132966642035701400 0
 33C:\select2\dist\index.579125c3.js132966645706892916 0
-38C:\select2\dist\index.92e644d8.css.map132971869276543779 0
-33C:\select2\dist\index.975ef6c8.js132971994661991519 0
-37C:\select2\dist\index.975ef6c8.js.map132971994662001484 0
+38C:\select2\dist\index.92e644d8.css.map132972580785675215 0
+33C:\select2\dist\index.975ef6c8.js132972582258553500 0
+37C:\select2\dist\index.975ef6c8.js.map132972582258563484 0
 34C:\select2\dist\index.dcc9ba11.css132966696168056421 0
 35C:\select2\dist\select2.59712999.js132966643471868583 0
 39C:\select2\dist\select2.59712999.js.map132966643471878557 0

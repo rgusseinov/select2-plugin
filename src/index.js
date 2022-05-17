@@ -3,6 +3,7 @@ import Select2 from "./select2";
 
 const select2 = new Select2("#select", {
   placeholder: "Please select item",
+  allowSearch: true,
   data: [
     { id: 1, value: "Milk" },
     { id: 2, value: "Water" },
