@@ -530,7 +530,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _select2Sass = require("./sass/select2.sass");
 var _select2 = require("./select2");
 var _select2Default = parcelHelpers.interopDefault(_select2);
-const select2 = new _select2Default.default("#select", {
+new _select2Default.default("#select", {
     placeholder: "Please select item",
     allowSearch: true,
     data: [
@@ -568,7 +568,6 @@ const select2 = new _select2Default.default("#select", {
         }, 
     ]
 });
-window.s = select2;
 
 },{"./sass/select2.sass":"kvs8F","./select2":"6S5qz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kvs8F":[function() {},{}],"6S5qz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");

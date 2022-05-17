@@ -1,7 +1,7 @@
 import "./sass/select2.sass";
 import Select2 from "./select2";
 
-const select2 = new Select2("#select", {
+new Select2("#select", {
   placeholder: "Please select item",
   allowSearch: true,
   data: [
@@ -15,5 +15,3 @@ const select2 = new Select2("#select", {
     { id: 8, value: "Meat" },
   ],
 });
-
-window.s = select2;

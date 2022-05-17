@@ -15,7 +15,7 @@
 58C:\select2\node_modules\@parcel\core\test\fixtures\plugins132966641870346372 1
 50C:\select2\node_modules\svgo\plugins\reusePaths.js121436361000000000 0
 41C:\select2\node_modules\nan\nan_private.h131637928500000000 0
-15C:\select2\dist132972582258573450 1
+15C:\select2\dist132972583296870264 1
 31C:\select2\node_modules\globals132966641796466291 1
 58C:\select2\node_modules\svgo\plugins\convertShapeToPath.js121436361000000000 0
 23C:\select2\node_modules132966646355985044 1
@@ -68,7 +68,7 @@
 47C:\select2\node_modules\escalade\sync\index.mjs121436361000000000 0
 42C:\select2\node_modules\yaml\dist\types.js121436361000000000 0
 53C:\select2\node_modules\terser\node_modules\commander132966641793971018 1
-23C:\select2\src\index.js132972573358309996 0
+23C:\select2\src\index.js132972583471244527 0
 61C:\select2\node_modules\utility-types\dist\utility-types.d.ts121436361000000000 0
 40C:\select2\node_modules\@swc\helpers\lib132966641805131216 1
 53C:\select2\node_modules\nan\nan_typedarray_contents.h132319691640000000 0
@@ -4319,8 +4319,8 @@
 39C:\select2\node_modules\.bin\terser.ps1132966642035701400 0
 33C:\select2\dist\index.579125c3.js132966645706892916 0
 38C:\select2\dist\index.92e644d8.css.map132972580785675215 0
-33C:\select2\dist\index.975ef6c8.js132972582258553500 0
-37C:\select2\dist\index.975ef6c8.js.map132972582258563484 0
+33C:\select2\dist\index.975ef6c8.js132972583296830621 0
+37C:\select2\dist\index.975ef6c8.js.map132972583296860285 0
 34C:\select2\dist\index.dcc9ba11.css132966696168056421 0
 35C:\select2\dist\select2.59712999.js132966643471868583 0
 39C:\select2\dist\select2.59712999.js.map132966643471878557 0
