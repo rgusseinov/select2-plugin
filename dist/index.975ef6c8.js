@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"7fmqN":[function(require,module,exports) {
+})({"4GyDO":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -530,7 +530,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _select2Sass = require("./sass/select2.sass");
 var _select2 = require("./select2");
 var _select2Default = parcelHelpers.interopDefault(_select2);
-new _select2Default.default("#select", {
+const select2 = new _select2Default.default("#select", {
     placeholder: "Please select item",
     allowSearch: true,
     data: [
@@ -716,6 +716,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["7fmqN","8lqZg"], "8lqZg", "parcelRequirea2c1")
+},{}]},["4GyDO","8lqZg"], "8lqZg", "parcelRequirea2c1")
 
 //# sourceMappingURL=index.975ef6c8.js.map
