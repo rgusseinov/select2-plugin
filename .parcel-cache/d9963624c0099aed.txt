@@ -17,7 +17,7 @@
 60C:\select2-plugin\node_modules\source-map-support\LICENSE.md133032050235292889 0
 65C:\select2-plugin\node_modules\@parcel\packager-js\lib\helpers.js133032050202315736 0
 54C:\select2-plugin\node_modules\whatwg-url\lib\infra.js133032050236596157 0
-22C:\select2-plugin\dist133032082022397429 1
+22C:\select2-plugin\dist133032088688350387 1
 81C:\select2-plugin\node_modules\@swc\helpers\src\_class_private_field_loose_key.js133032050213376715 0
 41C:\select2-plugin\node_modules\css-select133032050218682291 1
 52C:\select2-plugin\node_modules\css-tree\lib\index.js133032050218843511 0
@@ -378,7 +378,7 @@
 75C:\select2-plugin\node_modules\css-select\lib\pseudo-selectors\filters.d.ts133032050218612477 0
 65C:\select2-plugin\node_modules\postcss-normalize-url\src\index.js121436361000000000 0
 43C:\select2-plugin\node_modules\glob\sync.js121436361000000000 0
-44C:\select2-plugin\dist\index.975ef6c8.js.map133032050768750251 0
+44C:\select2-plugin\dist\index.975ef6c8.js.map133032088688350387 0
 54C:\select2-plugin\node_modules\parent-module\readme.md133032050232450763 0
 71C:\select2-plugin\node_modules\utility-types\dist\aliases-and-guards.js133032050236466503 0
 88C:\select2-plugin\node_modules\dom-serializer\node_modules\entities\lib\maps\decode.json133032050221048080 0
@@ -5435,7 +5435,7 @@
 62C:\select2-plugin\node_modules\@parcel\codeframe\test\fixtures133032050197948932 1
 80C:\select2-plugin\node_modules\caniuse-lite\data\features\http-live-streaming.js133032050215043995 0
 66C:\select2-plugin\node_modules\caniuse-lite\data\features\http2.js133032050215043995 0
-40C:\select2-plugin\dist\index.975ef6c8.js133032050768739727 0
+40C:\select2-plugin\dist\index.975ef6c8.js133032088688340417 0
 66C:\select2-plugin\node_modules\caniuse-lite\data\features\http3.js133032050215054038 0
 76C:\select2-plugin\node_modules\caniuse-lite\data\features\iframe-seamless.js133032050215054038 0
 78C:\select2-plugin\node_modules\caniuse-lite\data\features\loading-lazy-attr.js133032050215243525 0
@@ -6676,12 +6676,12 @@
 46C:\select2-plugin\node_modules\.bin\terser.cmd133032050197348714 0
 44C:\select2-plugin\dist\index.579125c3.js.map133032050197222067 0
 40C:\select2-plugin\dist\index.62e98e02.js133032082022317634 0
-41C:\select2-plugin\dist\index.92e644d8.css133032050768602223 0
-45C:\select2-plugin\dist\index.92e644d8.css.map133032050768622182 0
+41C:\select2-plugin\dist\index.92e644d8.css133032088688182342 0
+45C:\select2-plugin\dist\index.92e644d8.css.map133032088688202287 0
 41C:\select2-plugin\dist\index.e4708734.css133032082022317634 0
 45C:\select2-plugin\dist\index.e4708734.css.map133032082022347560 0
 27C:\select2-plugin\.cache\9f133032087247419892 1
-33C:\select2-plugin\dist\index.html133032082022317634 0
+33C:\select2-plugin\dist\index.html133032088688182342 0
 42C:\select2-plugin\dist\select2.59712999.js133032050197258940 0
 27C:\select2-plugin\.cache\04133032087243430562 1
 27C:\select2-plugin\.cache\09133032087246911250 1
