@@ -2,7 +2,8 @@
   "name": "select2",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel --open",
+    "start": "serve",
+    "startOpen": "parcel --open",
     "build": "parcel build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
@@ -14,6 +15,7 @@
     "postcss": "^8.4.14"
   },
   "dependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "serve": "^14.0.1"
   }
 }
