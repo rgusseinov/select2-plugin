@@ -3,7 +3,9 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel --open",
-    "build": "parcel build"
+    "build": "parcel build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.5.0",
