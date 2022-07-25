@@ -1,7 +1,7 @@
 import "./sass/select2.sass";
 import Select2 from "./select2";
 
-new Select2("#select", {
+const select2 = new Select2("#select", {
   placeholder: "Please select item",
   allowSearch: true,
   data: [
