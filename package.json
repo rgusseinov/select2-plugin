@@ -2,7 +2,7 @@
   "name": "select2",
   "source": "src/index.html",
   "scripts": {
-    "start": "serve",
+    "start": "parcel ./src/index.html --open",
     "startOpen": "parcel --open",
     "build": "parcel build",
     "predeploy": "npm run build",

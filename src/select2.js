@@ -2,25 +2,29 @@ const getTemplate = (data, allowSearch, placeholder) => {
   const text = placeholder ?? "Please select option";
   const selectItems = data
     .map(
-      (item) =>
-        `<li class="select__item" data-type="item" data-id=${item.id}>${item.value}</li>`
+      (item, key) =>
+        `<li
+          class="select__item"
+          data-type="item"
+          tabindex="${key + 3}"
+          data-id=${item.id}>${item.value}</li>`
     )
     .join("");
 
   const inputSearchMarkup = allowSearch
-    ? `<input type="text" class="select__search" data-type="search" />`
+    ? `<input type="text" class="select__search" data-type="search" tabindex="1"/>`
     : ``;
 
   return `
 		<div class="select">
-			<div class="select__input" data-type="input">
+			<div class="select__input" data-type="input" tabindex="0">
 				<span data-type="value">${text}</span>
-				<i class="fa fa-chevron-up" data-type="arrow"></i>
+				<i class="fa fa-chevron-down" data-type="arrow"></i>
 			</div>
 			
 			<div class="select__dropdown">
 				${inputSearchMarkup}
-				<ul class="select__list" data-type="list-item">
+				<ul class="select__list" data-type="list-item" tabindex="2">
 					${selectItems}
 				</ul>
 			</div>
@@ -79,12 +83,14 @@ class Select2 {
   }
 
   keyupHandler(e) {
+    if (!e.target.value) return;
+
     const value = e.target.value.toLowerCase();
     const { data } = this.options;
     const filteredItems = getFilteredItems(data, value);
 
     if (!filteredItems.length) {
-      this.$listItems.innerHTML = `<li class="select__item">No items found</li>`;
+      this.$listItems.innerHTML = `<li class="select__item" tabindex="3">No items found</li>`;
       return;
     }
 
@@ -93,10 +99,10 @@ class Select2 {
 
   _renderItems(data) {
     const listItemMarkup = data
-      .map((item) => {
+      .map((item, key) => {
         return `<li class="select__item ${
           item.id == this.selectedId ? "selected" : ""
-        }" data-type="item" data-id=${item.id}>${item.value}</li>`;
+        }" data-type="item" tabindex="${key + 3}" data-id=${item.id}>${item.value}</li>`;
       })
       .join("");
     this.$listItems.innerHTML = listItemMarkup;
@@ -126,8 +132,9 @@ class Select2 {
     const { data } = this.options;
 
     this.$el.classList.add("open");
-    this.$arrow.classList.add("fa-chevron-down");
-    this.$arrow.classList.remove("fa-chevron-up");
+    this.$arrow.classList.add("fa-chevron-up");
+    this.$arrow.classList.remove("fa-chevron-down");
+    this.$input.focus();
 
     this._renderItems(data);
   }
@@ -136,8 +143,8 @@ class Select2 {
     const { data } = this.options;
 
     this.$el.classList.remove("open");
-    this.$arrow.classList.add("fa-chevron-up");
-    this.$arrow.classList.remove("fa-chevron-down");
+    this.$arrow.classList.add("fa-chevron-down");
+    this.$arrow.classList.remove("fa-chevron-up");
 
     if (this.$input.value) {
       this._renderItems(data);
